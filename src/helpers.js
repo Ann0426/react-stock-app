@@ -127,3 +127,29 @@ const calculateDividendPayoutValue = (stock) => {
   const total = dividend * (1000 / stock.ask);
   return total;
 };
+
+// export const getInfoCardData = (des,stocks) =>{
+//   if(des === "growth"){
+//     return calculateGrowth(stocks)
+//   } else if(des === "current"){
+//     return calculateCurrent(stocks)
+//   }else if(des === "history"){
+//     return calculateHistory(stocks)
+//   }
+// }
+// const calculateGrowth = (stocks) =>{
+//   const sorted = sortStocksByDividendYield(stocks)
+//   const year = getCurrentYear()
+//   return {
+//     ticker: sorted.ticker,
+//     amount: sorted.dividend[year]
+//   }
+// }
+// const calculateCurrent = (stocks) =>{
+//   const sorted = sortStocksByDividendYield(stocks)
+//   return sorted[0]
+// }
+// const calculateHistory = (stocks) =>{
+//   const sorted = sortStocksByCompoundedYield(stocks)
+//   return sorted[0]
+// }
