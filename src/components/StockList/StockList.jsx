@@ -8,6 +8,7 @@ const StockList = ({ stocks }) => {
     return stocks.map((stock) => {
       return(
       <li className={styles.listItem} key={stock.ticker }>
+      
         <div className={styles.listItemName}>{stock.name}</div>
         <div className={styles.listItemTicker}>{stock.ticker}</div>
         <div className={styles.listItemAsk}>{stock.ask}</div>
@@ -19,7 +20,7 @@ const StockList = ({ stocks }) => {
         <div className={styles.listItemDp1000Spent}>
           {getDividendPer1000Spent(stock)} NOK
         </div>
-        <div className={styles.listItemPe}>{getStockPE(stock)}</div>
+        <div className={styles.listItemPe}>{stock.pe}</div>
         <div className={styles.listItemSector}>{stock.sector}</div>
 
       </li>
@@ -59,9 +60,7 @@ const StockList = ({ stocks }) => {
 //       setStocksByDividendYieldCurrentYear();
 //     }
 //   };
-  const getStockPE = (stock) =>{
-    return 36;
-  }
+
   const getDividendPerShare = (stock) => {
     const date = new Date();
     const year = date.getFullYear();

@@ -36,12 +36,13 @@
   color: #585858;
   margin: 16px 0;
   position: relative;
+  
 }
 
 .stockList {
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style-type: circle;
 }
 
 .listContainer {
