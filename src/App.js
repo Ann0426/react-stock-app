@@ -8,23 +8,23 @@ import InfoCard from "./components/InfoCard/InfoCard";
 import StockList from "./components/StockList/StockList";
 import styles from"./App.module.css";
 import data from "./data.js"
-import{sortStocksByDividendYield} from "./helpers.js";
+import{getTopFiveDividendStocks,getInfoCardData} from "./helpers.js";
 
 
 
 function App() {
-  sortStocksByDividendYield(data.stocks)
+
 
   return <div className="App"> 
             <Header/> 
             <Subheader>
               <ExchangeList exchanges={data.exchanges}/>
-              <TopFiveDividendStocksList stocks={sortStocksByDividendYield(data.stocks)}/>
-              <div classname={styles.InfoCardContainer}>
-                <InfoCard title = " Highest stock this year" stock={data.stocks}/>
-                <InfoCard title = " Highest stock all years" stock={data.stocks}/>
-                <InfoCard title = " Highest growth in 5  year" stock={data.stocks} darkmode/>
-              </div>
+              <TopFiveDividendStocksList stocks={getTopFiveDividendStocks(data.stocks)}/>
+              {/* <div classname={styles.infoCardContainer}> */}
+              <InfoCard title = " Highest stock this year" stock={getInfoCardData("current",data.stocks)}/>
+              <InfoCard title = " Highest stock all years" stock={getInfoCardData("history",data.stocks)}/>
+              <InfoCard title = " Highest growth in 5  year" stock={getInfoCardData("growth",data.stocks)} darkmode/>
+              {/* </div> */}
             </Subheader>
             <div className = { styles.dashboardContent}>
               <div className = {styles.dashboardContentContainer}>

@@ -30,6 +30,7 @@ const data = {
       sector: "Industry",
       change: 1.54,
       dividends: {
+        2021:0.19,
         2020: 20,
         2019: 19,
         2018: 18,
@@ -70,6 +71,7 @@ const data = {
       sector: "Industry",
       change: 1.54,
       dividends: {
+        2021:0.19,
         2020: 23,
         2019: 5,
         2018: 18,
@@ -107,6 +109,7 @@ const data = {
       sector: "Industry",
       change: 1.54,
       dividends: {
+        2021:0.19,
         2020: 13,
         2019: 15,
         2018: 18,
@@ -136,6 +139,7 @@ const data = {
       sector: "Industry",
       change: 1.54,
       dividends: {
+        2021:0.159,
         2020: 2,
         2019: 3,
         2018: 18,
@@ -165,6 +169,7 @@ const data = {
       sector: "Industry",
       change: 1.54,
       dividends: {
+        2021:0.18,
         2020: 0.2,
         2019: 3,
         2018: 18,
