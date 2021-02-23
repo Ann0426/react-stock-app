@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 
 import styles from "./StockList.module.css";
-
-const StockList = ({ stocks }) => {
+import{sortStocksByDividendYield,sortStocksByCompoundedYield} from "../../helpers";
+import Select from "../Select/Select";
+const StockList = ({ stocks,setStocks }) => {
+  useEffect(() =>{
+    setStocksByDividendYieldCurrentYear();
+  },[]);
 
   const renderListItems = () => {
     return stocks.map((stock) => {
@@ -28,38 +32,38 @@ const StockList = ({ stocks }) => {
     );
   };
 
-//   const getOptions = () => {
-//     return [
-//       {
-//         displayValue: "Highest dividend yield 2020",
-//         value: "dividendyieldcurrentyear",
-//       },
-//       {
-//         displayValue: "Highest dividend yield overall",
-//         value: "dividendyieldoverall",
-//       },
-//     ];
-//   };
+  const getOptions = () => {
+    return [
+      {
+        displayValue: "Highest dividend yield 2020",
+        value: "dividendyieldcurrentyear",
+      },
+      {
+        displayValue: "Highest dividend yield overall",
+        value: "dividendyieldoverall",
+      },
+    ];
+  };
 
-//   const setStocksByDividendYieldOverall = () => {
-//     const sorted = sortStocksByCompoundedYield(stocks);
-//     setStocks(sorted);
-//   };
+  const setStocksByDividendYieldOverall = () => {
+    const sorted = sortStocksByCompoundedYield(stocks);
+    setStocks(sorted);
+  };
 
-//   const setStocksByDividendYieldCurrentYear = () => {
-//     const sorted = sortStocksByDividendYield(stocks);
-//     setStocks(sorted);
-//   };
+  const setStocksByDividendYieldCurrentYear = () => {
+    const sorted = sortStocksByDividendYield(stocks);
+    setStocks(sorted);
+  };
 
-//   const onSelectChange = (e) => {
-//     const descriptor = e.target.value;
+  const onSelectChange = (e) => {
+    const descriptor = e.target.value;
 
-//     if (descriptor === "dividendyieldoverall") {
-//       setStocksByDividendYieldOverall();
-//     } else if (descriptor === "dividendyieldcurrentyear") {
-//       setStocksByDividendYieldCurrentYear();
-//     }
-//   };
+    if (descriptor === "dividendyieldoverall") {
+      setStocksByDividendYieldOverall();
+    } else if (descriptor === "dividendyieldcurrentyear") {
+      setStocksByDividendYieldCurrentYear();
+    }
+  };
 
   const getDividendPerShare = (stock) => {
     const date = new Date();
@@ -79,11 +83,11 @@ const StockList = ({ stocks }) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.heading}>Ann Exchange</h1>
-        {/* <Select
+        <Select
           options={getOptions()}
           onChange={onSelectChange}
           className={styles.select}
-        /> */}
+        />
       </div>
 
       <div className={styles.listContainer}>

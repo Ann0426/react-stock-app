@@ -9,74 +9,7 @@ export const sortStocksByDividendYield = (stocks) => {
   });
 
   return sorted;
-  console.log(sorted)
-};
-export const getTopFiveDividendStocks = (stocks)=>{
-  const sorted = sortStocksByDividendYield(stocks)
-  const year = getCurrentYear()
-  return sorted.slice(0,5).map(stock =>{
-    return{
-      ticker:stock.ticker,
-      name: stock.name,
-      amount : stock.dividends[year],
-    }
-   
-  })
-
 }
-export const getInfoCardData = (des,stocks) =>{
-  if (des === "growth"){
-    return calculateGrowthStock(stocks)
-  }else if (des === "current"){
-    return calculateCurrentStock(stocks)
-  }else if (des === "history"){
-    return calculateHistoryStock(stocks)
-  }
-
-}
-const calculateCurrentStock = (stocks) => {
-  const sorted = sortStocksByDividendYield(stocks)
-  const year = getCurrentYear()
-  return {
-    ticker:sorted[0].ticker,
-    amount:sorted[0].dividends[year]
-  }
-}
-const calculateHistoryStock = (stocks) => {
-  const sortedByAllYear = stocks.map(stock =>{
-    let total =0;
-    Object.keys(stock.dividends).forEach(key =>{
-      total += stock.dividends[key]
-    })
-    stock.total = total
-    return stock;
-
-  }).sort((stockA,stockB)=>  { return stockB.total -stockA.total;});
-  console.log(sortedByAllYear[0])
-  return{
-    ticker: sortedByAllYear[0].ticker,
-    amount: sortedByAllYear[0].total
-  };
-
-};
-
-const calculateGrowthStock = (stocks) =>{
-  const sortedByGrowth = stocks.map(stock =>{
-    const year = getCurrentYear();
-    const campareYear = year -3;
-    const total = stock.dividends[year] - stock.dividends[campareYear]; 
-    stock.growth = total
-    return stock;
-
-  }).sort((stockA,stockB)=>  {return stockB.growth -stockA.growth;});
-  return {
-    ticker: sortedByGrowth[0].ticker,
-    amount: sortedByGrowth[0].growth
-  };
-};
-
-
-
 export const sortStocksByCompoundedYield = (stocks) => {
   return sortStocks(stocks, calculateTotalDividends);
 };
@@ -193,28 +126,3 @@ const calculateDividendPayoutValue = (stock) => {
   return total;
 };
 
-// export const getInfoCardData = (des,stocks) =>{
-//   if(des === "growth"){
-//     return calculateGrowth(stocks)
-//   } else if(des === "current"){
-//     return calculateCurrent(stocks)
-//   }else if(des === "history"){
-//     return calculateHistory(stocks)
-//   }
-// }
-// const calculateGrowth = (stocks) =>{
-//   const sorted = sortStocksByDividendYield(stocks)
-//   const year = getCurrentYear()
-//   return {
-//     ticker: sorted.ticker,
-//     amount: sorted.dividend[year]
-//   }
-// }
-// const calculateCurrent = (stocks) =>{
-//   const sorted = sortStocksByDividendYield(stocks)
-//   return sorted[0]
-// }
-// const calculateHistory = (stocks) =>{
-//   const sorted = sortStocksByCompoundedYield(stocks)
-//   return sorted[0]
-// }

@@ -1,6 +1,6 @@
 import React from "react";
 
-// import { ConditionallyRender } from "react-util-kit";
+import { ConditionallyRender } from "react-util-kit";
 
 import Header from "../../components/Header/Header";
 import Subheader from "../../components/Subheader/Subheader";
@@ -39,7 +39,8 @@ const Dashboard = ({ exchanges, stocks, setStocks }) => {
       </Subheader>
       <div className = { styles.dashboardContent}>
               <div className = {styles.dashboardContentContainer}>
-                <StockList stocks={stocks}/>
+                <ConditionallyRender ifTrue={stocks.length} show = {< StockList stocks={stocks} setStocks={setStocks}/>} />
+                
               </div>
             </div>
 

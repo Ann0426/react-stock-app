@@ -1,16 +1,5 @@
-export const sortStocksByDividendYield = (stocks) => {
-  const stocksCopy = [...stocks];
-  const year = getCurrentYear();
-  console.log(year)
-  console.log(stocks)
+import {getCurrentYear, sortStocksByDividendYield} from "../../helpers";
 
-  const sorted = stocksCopy.sort((stockA, stockB) => {
-    return stockB.dividends[year] - stockA.dividends[year];
-  });
-
-  return sorted;
-  console.log(sorted)
-};
 export const getTopFiveDividendStocks = (stocks)=>{
   const sorted = sortStocksByDividendYield(stocks)
   const year = getCurrentYear()
@@ -38,7 +27,7 @@ export const getInfoCardData = (des,stocks) =>{
 const calculateCurrentStock = (stocks) => {
   const sorted = sortStocksByDividendYield(stocks)
   const year = getCurrentYear()
-  if (sorted.length ===0) return{};
+  if (sorted.length ===0) return[];
   return {
     ticker:sorted[0].ticker,
     amount:sorted[0].dividends[year]
@@ -80,7 +69,6 @@ const calculateGrowthStock = (stocks) =>{
 };
 
 
-
 export const sortStocksByCompoundedYield = (stocks) => {
   return sortStocks(stocks, calculateTotalDividends);
 };
@@ -116,12 +104,6 @@ const sortStocks = (stocks, sortingValueFunc) => {
   return sortedByValue;
 };
 
-export const getCurrentYear = () => {
-  const date = new Date();
-  const year = date.getFullYear();
-
-  return year;
-};
 
 export const calculateTotalDividends = (stock) => {
   let total = 0;
@@ -197,28 +179,3 @@ const calculateDividendPayoutValue = (stock) => {
   return total;
 };
 
-// export const getInfoCardData = (des,stocks) =>{
-//   if(des === "growth"){
-//     return calculateGrowth(stocks)
-//   } else if(des === "current"){
-//     return calculateCurrent(stocks)
-//   }else if(des === "history"){
-//     return calculateHistory(stocks)
-//   }
-// }
-// const calculateGrowth = (stocks) =>{
-//   const sorted = sortStocksByDividendYield(stocks)
-//   const year = getCurrentYear()
-//   return {
-//     ticker: sorted.ticker,
-//     amount: sorted.dividend[year]
-//   }
-// }
-// const calculateCurrent = (stocks) =>{
-//   const sorted = sortStocksByDividendYield(stocks)
-//   return sorted[0]
-// }
-// const calculateHistory = (stocks) =>{
-//   const sorted = sortStocksByCompoundedYield(stocks)
-//   return sorted[0]
-// }
