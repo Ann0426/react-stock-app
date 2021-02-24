@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import InfoCard from "./components/InfoCard/InfoCard";
 // import StockList from "./components/StockList/StockList";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import StockView from "./pages/StockView/StockView";
 // import styles from"./App.module.css";
 import data from "./data.js";
 // import{getTopFiveDividendStocks,getInfoCardData} from "./helpers.js";
@@ -51,16 +52,15 @@ function App() {
           )}
         />
         <Route
-          path="/stock/:ticker"
-          component={Test}
-          // render={(props) => <StockView {...props} stocks={stocks} />}
+          path="/stocks/:ticker"
+          render={(props) => <StockView {...props} stocks={stocks} />}
         />
+      
+     
       </Router>
     </div>
   );
 }
-const Test =() =>{
-  return <div>hello</div>;
-}
+
 
 export default App;

@@ -7,11 +7,13 @@ import Header from "../../components/Header/Header";
 import Subheader from "../../components/Subheader/Subheader";
 import StockInfo from "../../components/StockInfo/StockInfo";
 import Highlights from "../../components/Highlights/Highlights";
-import Resources from "../../components/Resources/Resources";
-import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
-import Dividend from "./Dividend/Dividend";
-import Research from "./Research/Research";
-import Layout from "../../components/Layout/Layout";
+
+import styles from "./StockView.module.css";
+// import Resources from "../../components/Resources/Resources";
+// import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
+// import Dividend from "./Dividend/Dividend";
+// import Research from "./Research/Research";
+// import Layout from "../../components/Layout/Layout";
 
 import { sortStocksByDividendYield } from "../../helpers";
 
@@ -30,7 +32,7 @@ const initialObject = {
 };
 
 const StockView = ({ stocks }) => {
-  const match = useRouteMatch();
+  // const match = useRouteMatch();
   const { ticker } = useParams();
   const [stock, setStock] = useState(initialObject);
 
@@ -74,16 +76,17 @@ const StockView = ({ stocks }) => {
             <>
               <StockInfo stock={stock} />
               <Highlights stock={stock} stocks={stocks} />
-              <Resources
+              {/* <Resources
                 homepage={stock.homepage}
                 investorpage={stock.investorpage}
-              />
-              <StockViewMenu />
+              />  */}
+              {/* <StockViewMenu /> */}
             </>
-          }
-        />
+          } 
+         /> 
+       
       </Subheader>
-      <Layout>
+      {/* <Layout>
         <Route
           exact
           path={match.url}
@@ -102,7 +105,7 @@ const StockView = ({ stocks }) => {
             <Research research={stock.research} setResearch={setResearch} />
           )}
         />
-      </Layout>
+      </Layout> */}
     </>
   );
 };
