@@ -122,7 +122,7 @@ const calculateDividendPayoutValue = (stock) => {
   const year = getCurrentYear();
   const dividend = stock.dividends[year];
 
-  const total = dividend * (1000 / stock.ask);
+  const total = dividend * (1000 / stock.ask); 
   return total;
 };
 

@@ -75,7 +75,7 @@ const StockView = ({ stocks }) => {
           show={
             <>
               <StockInfo stock={stock} />
-              <Highlights stock={stock} stocks={stocks} />
+            
               {/* <Resources
                 homepage={stock.homepage}
                 investorpage={stock.investorpage}
@@ -83,7 +83,20 @@ const StockView = ({ stocks }) => {
               {/* <StockViewMenu /> */}
             </>
           } 
-         /> 
+         /> <ConditionallyRender
+         ifTrue={stock}
+         show={
+           <>
+             
+             <Highlights stock={stock} stocks={stocks} />
+             {/* <Resources
+               homepage={stock.homepage}
+               investorpage={stock.investorpage}
+             />  */}
+             {/* <StockViewMenu /> */}
+           </>
+         } 
+        /> 
        
       </Subheader>
       {/* <Layout>

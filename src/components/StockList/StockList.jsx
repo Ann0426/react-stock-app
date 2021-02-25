@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import styles from "./StockList.module.css";
 import{sortStocksByDividendYield,sortStocksByCompoundedYield} from "../../helpers";
 import Select from "../Select/Select";
@@ -11,8 +11,10 @@ const StockList = ({ stocks,setStocks }) => {
   const renderListItems = () => {
     return stocks.map((stock) => {
       return(
+        
       <li className={styles.listItem} key={stock.ticker }>
-      
+        
+        <Link className={styles.link} to={`/stocks/${stock.ticker}`}>
         <div className={styles.listItemName}>{stock.name}</div>
         <div className={styles.listItemTicker}>{stock.ticker}</div>
         <div className={styles.listItemAsk}>{stock.ask}</div>
@@ -26,8 +28,9 @@ const StockList = ({ stocks,setStocks }) => {
         </div>
         <div className={styles.listItemPe}>{stock.pe}</div>
         <div className={styles.listItemSector}>{stock.sector}</div>
-
+        </Link>
       </li>
+      
       )}
     );
   };
