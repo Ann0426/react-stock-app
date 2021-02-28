@@ -1,9 +1,7 @@
 export const sortStocksByDividendYield = (stocks) => {
   const stocksCopy = [...stocks];
   const year = getCurrentYear();
-  console.log(year)
-  console.log(stocks)
-
+  
   const sorted = stocksCopy.sort((stockA, stockB) => {
     return stockB.dividends[year] - stockA.dividends[year];
   });
