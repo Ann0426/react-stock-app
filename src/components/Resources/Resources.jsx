@@ -16,7 +16,7 @@ const Resources = ({ homepage, investorpage }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Homepage
+          Home
         </a>
       </div>
       <div className={styles.container}>

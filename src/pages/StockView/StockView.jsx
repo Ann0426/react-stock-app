@@ -10,7 +10,7 @@ import Highlights from "../../components/Highlights/Highlights";
 
 import styles from "./StockView.module.css";
 import Resources from "../../components/Resources/Resources";
-// import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
+import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
 // import Dividend from "./Dividend/Dividend";
 // import Research from "./Research/Research";
 // import Layout from "../../components/Layout/Layout";
@@ -87,7 +87,7 @@ const StockView = ({ stocks }) => {
                homepage={stock.homepage}
                investorpage={stock.investorpage}
              /> 
-             {/* <StockViewMenu /> */}
+             <StockViewMenu />
            </>
          } 
         /> 

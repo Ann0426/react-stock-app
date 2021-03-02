@@ -6,10 +6,10 @@
 }
 
 .container {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   margin: 0 20px 0 0;
-  padding-bottom: 7px;
+  padding-bottom: 0px;
 }
 
 .icon {
