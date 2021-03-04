@@ -11,9 +11,9 @@ import Highlights from "../../components/Highlights/Highlights";
 import styles from "./StockView.module.css";
 import Resources from "../../components/Resources/Resources";
 import StockViewMenu from "../../components/StockViewMenu/StockViewMenu";
-// import Dividend from "./Dividend/Dividend";
-// import Research from "./Research/Research";
-// import Layout from "../../components/Layout/Layout";
+import Dividend from "./Dividend/Dividend";
+import Research from "./Research/Research";
+import Layout from "../../components/Layout/Layout";
 
 import { sortStocksByDividendYield } from "../../helpers";
 
@@ -32,8 +32,10 @@ const initialObject = {
 };
 
 const StockView = ({ stocks }) => {
-  // const match = useRouteMatch();
+  const match = useRouteMatch();
   const { ticker } = useParams();
+  // const { name } = useParams();
+  // console.log({name},"23456789")
   const [stock, setStock] = useState(initialObject);
 
   useEffect(() => {
@@ -75,25 +77,17 @@ const StockView = ({ stocks }) => {
           show={
             <>
               <StockInfo stock={stock} />
-              {/* <StockViewMenu /> */}
-            </>
-          } 
-         /> <ConditionallyRender
-         ifTrue={stock}
-         show={
-           <>
-             <Highlights stock={stock} stocks={stocks} />
-             <Resources
+              <StockViewMenu />
+              <Highlights stock={stock} stocks={stocks} />
+              <Resources
                homepage={stock.homepage}
                investorpage={stock.investorpage}
-             /> 
-             <StockViewMenu />
-           </>
-         } 
-        /> 
-       
+              /> 
+            </>
+          } 
+         /> 
       </Subheader>
-      {/* <Layout>
+      <Layout>
         <Route
           exact
           path={match.url}
@@ -112,7 +106,7 @@ const StockView = ({ stocks }) => {
             <Research research={stock.research} setResearch={setResearch} />
           )}
         />
-      </Layout> */}
+      </Layout>
     </>
   );
 };
