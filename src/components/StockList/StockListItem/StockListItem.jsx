@@ -32,10 +32,10 @@ const StockListItem = ({ stock }) => {
         <div className={styles.listItemAsk}>{stock.ask}</div>
         <div className={styles.listItemBid}>{stock.bid}</div>
         <div className={styles.listItemDps}>
-          {getDividendPerShare(stock)} NOK
+          {getDividendPerShare(stock)} USD
         </div>
         <div className={styles.listItemDp1000Spent}>
-          {getDividendPer1000Spent(stock)} NOK
+          {getDividendPer1000Spent(stock)} USD
         </div>
         <div className={styles.listItemPe}>{stock.pe}</div>
         <div className={styles.listItemSector}>{stock.sector}</div>

@@ -13,7 +13,7 @@ const InfoCard = ({ title, stock, darkmode }) => {
       <h1 className={styles.header}>{title}</h1>
       <div>
         <p className={styles.paragraph}>{stock.ticker}</p>
-        <p className={styles.paragraph}>{stock.amount} NOK</p>
+        <p className={styles.paragraph}>{stock.amount} USD</p>
       </div>
     </div>
   );

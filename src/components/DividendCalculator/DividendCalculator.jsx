@@ -26,7 +26,7 @@ const DividendCalculator = ({ ask, currentYearDividend }) => {
 
       <div className={styles.container}>
         <div className={styles.innerContainer}>
-          <p className={styles.descriptor}>Amount in NOK</p>
+          <p className={styles.descriptor}>Amount in USD</p>
           <input
             value={amount}
             name="amount"
@@ -37,7 +37,7 @@ const DividendCalculator = ({ ask, currentYearDividend }) => {
         </div>
         <div className={styles.innerContainer}>
           <p className={styles.descriptor}>Current ask</p>
-          <p className={styles.ask}>{ask} NOK</p>
+          <p className={styles.ask}>{ask} USD</p>
         </div>
       </div>
       <div className={styles.container}>
@@ -48,7 +48,7 @@ const DividendCalculator = ({ ask, currentYearDividend }) => {
         <div className={styles.innerContainer}>
           <p className={styles.descriptor}>Projected dividend</p>
           <p className={styles.projectedDividend}>
-            {calculateProjectedDividend()} NOK
+            {calculateProjectedDividend()} USD
           </p>
         </div>
       </div>

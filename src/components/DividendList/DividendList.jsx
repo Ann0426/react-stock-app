@@ -14,7 +14,7 @@ const DividendList = ({ dividends, ticker, ranking }) => {
         return (
           <li className={styles.listItem} key={`${ticker}-${key}`}>
             <p>{key}</p>
-            <p>{dividends[key]} NOK</p>
+            <p>{dividends[key]} </p>
           </li>
         );
       });
