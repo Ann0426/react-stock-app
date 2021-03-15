@@ -58,7 +58,7 @@ const data = {
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 1,
         },
       ],
@@ -88,7 +88,7 @@ const data = {
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 1,
         },
         {
@@ -96,7 +96,7 @@ const data = {
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 2,
         },
       ],
@@ -126,7 +126,7 @@ const data = {
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 1,
         },
       ],
@@ -156,7 +156,7 @@ const data = {
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 1,
         },
       ],
@@ -182,11 +182,11 @@ const data = {
       pe: 15,
       research: [
         {
-          title: "First research",
+          title: "Second research",
           description:
             "This is the description. It is usually a lot longer than the title and contains information about the research that has been done",
           link: "https://google.com",
-          author: { name: "Jake", authorId: "author123" },
+          author: { name: "Ann", authorId: "author123" },
           id: 1,
         },
       ],

@@ -15,7 +15,7 @@ const ResearchCard = ({ title, description, link, author }) => (
         Source
       </a>
       <div className={styles.author}>
-        <div className={styles.authorAvatar}>J</div>
+        <div className={styles.authorAvatar}>A</div>
         <p>{author.name}</p>
       </div>
     </div>

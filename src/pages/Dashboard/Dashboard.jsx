@@ -8,7 +8,7 @@ import ExchangeList from "../../components/ExchangeList/ExchangeList";
 import TopFiveDividendStocksList from "../../components/TopFiveDividendStocksList/TopFiveDividendStocksList";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import StockList from "../../components/StockList/StockList";
-// import Layout from "../../components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 
 import { getTopFiveDividendStocks, getInfoCardData } from "./helpers";
 // import data from "../../data.js";
@@ -37,19 +37,19 @@ const Dashboard = ({ exchanges, stocks, setStocks }) => {
         />
         
       </Subheader>
-      <div className = { styles.dashboardContent}>
+      {/* <div className = { styles.dashboardContent}>
               <div className = {styles.dashboardContentContainer}>
                 <ConditionallyRender ifTrue={stocks.length} show = {< StockList stocks={stocks} setStocks={setStocks}/>} />
                 
               </div>
-            </div>
+            </div> */}
 
-      {/* <Layout>
+      <Layout>
         <ConditionallyRender
           ifTrue={stocks.length}
           show={<StockList stocks={stocks} setStocks={setStocks} />}
         />
-      </Layout> */}
+      </Layout>
     </>
   );
 };

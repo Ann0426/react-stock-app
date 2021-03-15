@@ -49,3 +49,19 @@
   align-items: center;
   background-color: #fff;
 }
+.header__optionLineOne {
+  font-size: 18.5px;
+}
+
+.header__optionLineTwo {
+  font-size: 18.5px;
+  font-weight: 700;
+}
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  
+}

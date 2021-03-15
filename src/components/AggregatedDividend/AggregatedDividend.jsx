@@ -100,12 +100,12 @@ const AggregatedDividend = ({ stocks, stock }) => {
 
       <div className={styles.container}>
         <p>Average past {years} years</p>
-        <p>{getAverage(stock.dividends)} NOK</p>
+        <p>{getAverage(stock.dividends)} USD</p>
       </div>
 
       <div className={styles.container}>
         <p>Total yield</p>
-        <p>{getTotalDividendPerStock(stock)} NOK</p>
+        <p>{getTotalDividendPerStock(stock)} USD</p>
       </div>
 
       <div className={styles.border} />

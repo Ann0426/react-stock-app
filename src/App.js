@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import './App.css';
 // import Header from './components/Header/Header';
@@ -9,13 +9,16 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import StockList from "./components/StockList/StockList";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import StockView from "./pages/StockView/StockView";
+import Login from "./pages/Login/Login";
 // import styles from"./App.module.css";
 import data from "./data.js";
+
 // import{getTopFiveDividendStocks,getInfoCardData} from "./helpers.js";
 
 
 
 function App() {
+
   const [exchanges, setExchanges] = useState([]);
   const [stocks, setStocks] = useState([]);
 
@@ -28,16 +31,18 @@ function App() {
       stocks,
     };
   };
+
   useEffect(() => {
     const { exchanges, stocks } = getData();
 
     setExchanges(exchanges);
     setStocks(stocks);
   }, []);
-
+  
 
   return (
     <div className="App">
+     
       <Router>
         <Route
           exact
@@ -55,9 +60,13 @@ function App() {
           path="/stocks/:ticker"
           render={(props) => <StockView {...props} stocks={stocks} />}
         />
+        < Route path = "/login" >
+        < Login/>
+        </Route> 
       
      
       </Router>
+     
     </div>
   );
 }
