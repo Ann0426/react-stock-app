@@ -32,7 +32,7 @@ const Research = ({ research, setResearch }) => {
       description,
       id: 100,
       author: {
-        name: "Jake",
+        name: "Ann",
       },
     };
 

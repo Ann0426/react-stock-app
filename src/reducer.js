@@ -1,5 +1,5 @@
 export const initialState = {
-    // basket: [],
+    userProfile:[{balance:100}],
     user: null
 };
 
@@ -15,11 +15,12 @@ const reducer = (state, action) => {
         //         ...state,
         //         basket: [...state.basket, action.item],
         //     };
-        // case 'EMPETY_BASKET':
-        //     return {
-        //         ...state,
-        //         basket: []
-        //     }
+        case 'save_Profile':
+            return {
+                ...state,
+                userProfile:[action.userProfile],
+                
+            }
 
         // case "REMOVE_FROM_BASKET":
         //     const index = state.basket.findIndex(

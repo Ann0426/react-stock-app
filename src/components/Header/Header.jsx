@@ -7,7 +7,7 @@ import { useContext } from "react";
 import {auth} from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 const Header = () => {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{  user }, dispatch] = useStateValue();
 
 
   
@@ -35,6 +35,9 @@ const Header = () => {
         <span className = {styles.header__optionLineTwo} > {user ? 'Sign Out' : 'Sign In'} </span> </Link>
         
         </div > 
+        <Link to = {user && '/profile' } className={styles.logoContainer}>
+        <span className = {styles.header__optionLineTwo} > {user ? 'Profile' : ' '} </span> </Link>
+
         
       </div>
     </header>

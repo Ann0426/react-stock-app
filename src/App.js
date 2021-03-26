@@ -10,8 +10,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import StockView from "./pages/StockView/StockView";
 import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
 // import styles from"./App.module.css";
 import data from "./data.js";
+import Test from "./Test.js";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 // import{getTopFiveDividendStocks,getInfoCardData} from "./helpers.js";
@@ -87,8 +89,12 @@ function App() {
         < Route path = "/login" >
         < Login/>
         </Route> 
-      
-     
+        < Route path = "/profile" >
+        < Profile/>
+        </Route>
+        < Route path = "/test" >
+        < Test/>
+        </Route>
       </Router>
      
     </div>
