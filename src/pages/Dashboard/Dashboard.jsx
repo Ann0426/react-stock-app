@@ -37,12 +37,7 @@ const Dashboard = ({ exchanges, stocks, setStocks }) => {
         />
         
       </Subheader>
-      {/* <div className = { styles.dashboardContent}>
-              <div className = {styles.dashboardContentContainer}>
-                <ConditionallyRender ifTrue={stocks.length} show = {< StockList stocks={stocks} setStocks={setStocks}/>} />
-                
-              </div>
-            </div> */}
+  
 
       <Layout>
         <ConditionallyRender

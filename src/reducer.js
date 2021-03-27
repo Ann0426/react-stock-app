@@ -1,20 +1,22 @@
 export const initialState = {
-    userProfile:[{balance:100}],
-    user: null
+    userProfile:[],
+    user: null,
+    basket:[],
 };
 
 // Selector
-// export const getBasketTotal = (basket) =>
-//     basket.reduce((amount, item) => item.price + amount, 0);
+// export const getbalance = (basket,userProfile) => userProfile[0].balance -
+//     basket.reduce( (amount, item) => item.amountinUSD + amount);
 
 const reducer = (state, action) => {
     // console.log(action);
     switch (action.type) {
-        // case "ADD_TO_BASKET":
-        //     return {
-        //         ...state,
-        //         basket: [...state.basket, action.item],
-        //     };
+        case "ADD_TO_BASKET":
+            
+            return {
+                ...state,
+                basket: [...state.basket, action.item],
+            };
         case 'save_Profile':
             return {
                 ...state,

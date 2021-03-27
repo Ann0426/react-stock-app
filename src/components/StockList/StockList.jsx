@@ -13,7 +13,7 @@ const StockList = ({ stocks,setStocks }) => {
       return(
         
       <li className={styles.listItem} key={stock.ticker }>
-        
+         <Link className={styles.link} to={`/buy/${stock.ticker}`}><button className={styles.buyButton}>Buy</button></Link>
         <Link className={styles.link} to={`/stocks/${stock.ticker}`}>
         <div className={styles.listItemName}>{stock.name}</div>
         <div className={styles.listItemTicker}>{stock.ticker}</div>

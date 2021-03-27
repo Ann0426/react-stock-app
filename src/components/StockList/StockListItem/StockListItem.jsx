@@ -23,10 +23,12 @@ const StockListItem = ({ stock }) => {
 
   return (
     <li className={styles.listItem} key={stock.ticker}>
+      
       <Link className={styles.link} to={`/stocks/${stock.ticker}`}>
         <div className={styles.iconContainer}>
           <StockListIcon className={styles.icon} />
         </div>
+       
         <div className={styles.listItemName}>{stock.name}</div>
         <div className={styles.listItemTicker}>{stock.ticker}</div>
         <div className={styles.listItemAsk}>{stock.ask}</div>

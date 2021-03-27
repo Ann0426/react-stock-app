@@ -28,15 +28,14 @@ const Header = () => {
         
         
         
-        <div onClick = { handleAuthenticaton }
-        className = {styles.header__option} >
-        <span className = {styles.header__optionLineOne} >Hello {!user ? 'Guest' : user.email } ! </span> 
+        <div 
+        className = {styles.header__option} ><Link to = {user && '/profile' } className={styles.logoContainer}>
+        <span className = {styles.header__optionLineOne} >Hello {!user ? 'Guest' : user.email } ! </span> </Link>
         <Link to = {!user && '/login' } className={styles.logoContainer}>
-        <span className = {styles.header__optionLineTwo} > {user ? 'Sign Out' : 'Sign In'} </span> </Link>
+        <span className = {styles.header__optionLineTwo} onClick = { handleAuthenticaton }> {user ? 'Sign Out' : 'Sign In'} </span> </Link>
         
         </div > 
-        <Link to = {user && '/profile' } className={styles.logoContainer}>
-        <span className = {styles.header__optionLineTwo} > {user ? 'Profile' : ' '} </span> </Link>
+        
 
         
       </div>
