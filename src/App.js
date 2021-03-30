@@ -12,6 +12,7 @@ import StockView from "./pages/StockView/StockView";
 import Buy from "./pages/Buy/Buy";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 // import styles from"./App.module.css";
 import data from "./data.js";
 import Test from "./Test.js";
@@ -96,6 +97,9 @@ function App() {
         </Route> 
         < Route path = "/profile" >
         < Profile/>
+        </Route>
+        < Route path = "/editprofile" >
+        < EditProfile/>
         </Route>
         < Route path = "/test" >
         < Test/>
