@@ -13,7 +13,7 @@ import styles from "./Buy.module.css";
 import Resources from "../../components/Resources/Resources";
 
 import { auth } from "../../firebase";
-import { useStateValue } from "../../StateProvider";
+
 
 import { sortStocksByDividendYield } from "../../helpers";
 
@@ -32,7 +32,7 @@ const initialObject = {
 };
 
 const Buy = ({ stocks }) => {
-  const [{ user, userProfile ,basket }, dispatch] = useStateValue();
+  
   const match = useRouteMatch();
   const { ticker } = useParams();
   const [stock, setStock] = useState(initialObject);

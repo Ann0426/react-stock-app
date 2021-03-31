@@ -79,7 +79,7 @@ const DividendsBuyAmount = ({ stock, stocks }) => {
             {calculateProjectedDividend()} USD
           </p>
         </div>
-        <div>{userProfile}</div>
+       
         
       </div>
       <div className={styles.buycontainer}>

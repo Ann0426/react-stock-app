@@ -6,6 +6,11 @@ import { auth } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 function EditProfile() {
     const [name, setName] = useState(' ');
+    const [age, setAge] = useState(' ');
+    const [address, setAddress] = useState(' ');
+    const [phone, setPhone] = useState(' ');
+    const [gender, setGender] = useState(' ');
+   
     
     const [{  user, userProfile,basket }, dispatch] = useStateValue();
     const saveProfile = () => {
@@ -14,8 +19,13 @@ function EditProfile() {
             type: 'save_Profile',
             userProfile: {
                 userName: name ,
-                userEmail: user.email,
+                email: user.email,
                 userPwd: user.password,
+                age:age,
+                address:address,
+                phone:phone,
+                gender:gender,
+
                 balance :100}
 
 
@@ -36,19 +46,42 @@ function EditProfile() {
         < div className = 'login__container' >
         <h1 > Profile </h1>
        
-        <h5 > username :</h5> 
+        <h4 > Username :</h4> 
         <input type = 'text'
         value = { name }
        
         onChange = { e => setName(e.target.value)}
         />
-        <h5 > E - mail :</h5> 
-        < h5>{ user.email }</h5> 
-        <h5 > Password : </h5> 
-        < h5>{ user.email }</h5> 
-        <h5 > Balance </h5> 
-        < h5>{ userProfile.balance }</h5>
-
+        
+        <h4 > E - mail :</h4> 
+        <h6>{ user.email }</h6> 
+       
+        <h4>Gender:</h4>
+        <input type = 'text'
+        value = { gender }
+       
+        onChange = { e => setGender(e.target.value)}
+        />
+        <h4>Age:</h4>
+        <input type = 'text'
+        value = { age }
+       
+        onChange = { e => setAge(e.target.value)}
+        />
+        <h4>Address:</h4>
+        <input type = 'text'
+        value = { address }
+       
+        onChange = { e => setAddress(e.target.value)}
+        />
+        <h4>Phone:</h4>
+        <input type = 'text'
+        value = { phone }
+       
+        onChange = { e => setPhone(e.target.value)}
+        />
+        <h4 > Balance :</h4> 
+        <h6>{ userProfile[0].balance}</h6>
      
 
        <Link to = { '/profile' }  >

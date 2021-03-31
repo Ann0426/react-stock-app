@@ -1,5 +1,10 @@
 export const initialState = {
-    userProfile:[],
+    userProfile:[{userName:"",
+    email:"",
+    gender:"",
+    age:"",address:""
+    ,phone:"",
+    balance:1000,}],
     user: null,
     basket:[],
 };
@@ -20,7 +25,7 @@ const reducer = (state, action) => {
         case 'save_Profile':
             return {
                 ...state,
-                userProfile:[action.userProfile],
+                userProfile: [action.userProfile],
                 
             }
 
