@@ -3,17 +3,21 @@ import { Link } from "react-router-dom";
 import styles from "./StockList.module.css";
 import{sortStocksByDividendYield,sortStocksByCompoundedYield} from "../../helpers";
 import Select from "../Select/Select";
+import {auth} from "../../firebase";
+import { useStateValue } from "../../StateProvider";
 const StockList = ({ stocks,setStocks }) => {
+  const [{  user }, dispatch] = useStateValue();
   useEffect(() =>{
     setStocksByDividendYieldCurrentYear();
   },[]);
 
   const renderListItems = () => {
+   
     return stocks.map((stock) => {
       return(
         
       <li className={styles.listItem} key={stock.ticker }>
-         <Link className={styles.link} to={`/buy/${stock.ticker}`}><button className={styles.buyButton}>Buy</button></Link>
+         {!user?"":<Link className={styles.link} to={`/buy/${stock.ticker}`}><button className={styles.buyButton}>Buy</button></Link>}
         <Link className={styles.link} to={`/stocks/${stock.ticker}`}>
         <div className={styles.listItemName}>{stock.name}</div>
         <div className={styles.listItemTicker}>{stock.ticker}</div>

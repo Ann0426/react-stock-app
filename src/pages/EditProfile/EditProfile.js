@@ -44,7 +44,7 @@ function EditProfile() {
         </header>
 
         < div className = 'login__container' >
-        <h1 > Profile </h1>
+        <h1 > Edit Profile </h1>
        
         <h4 > Username :</h4> 
         <input type = 'text'

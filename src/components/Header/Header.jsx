@@ -29,8 +29,9 @@ const Header = () => {
         
         
         <div 
-        className = {styles.header__option} ><Link to = {user && '/profile' } className={styles.logoContainer}>
-        <span className = {styles.header__optionLineOne} >Hello {!user ? 'Guest' : user.email } ! </span> </Link>
+        className = {styles.header__option} >{!user?
+        <span className = {styles.header__optionLineOne} >Hello  Guest ! </span> :<Link to = {user && '/profile' } className={styles.logoContainer}>
+        <span className = {styles.header__optionLineOne} >Hello { user.email } ! </span> </Link>}
         <Link to = {!user && '/login' } className={styles.logoContainer}>
         <span className = {styles.header__optionLineTwo} onClick = { handleAuthenticaton }> {user ? 'Sign Out' : 'Sign In'} </span> </Link>
         
