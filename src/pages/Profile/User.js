@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 
 function User({ userName,email,gender, age,address, phone,balance}) {
 
+
     return ( 
         <div className = 'login__container' >
         <h1 > Profile </h1>
@@ -20,7 +21,7 @@ function User({ userName,email,gender, age,address, phone,balance}) {
         <h4>Phone:</h4>
         <h6>{ phone }</h6>
         <h4 > Balance :</h4> 
-        <h6>{ balance }</h6>
+        <h6>{balance  }</h6>
         <Link to = { '/editprofile' }  >
         <button className = 'login__registerButton' > Edit  your Profile</button>
         </Link>
