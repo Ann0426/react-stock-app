@@ -21,7 +21,7 @@ const data = {
       change: 0.52,
     },
   ],
-  stocks: [
+  stocks: [~
     {
       name: "Veidekke",
       ticker: "VEI",
